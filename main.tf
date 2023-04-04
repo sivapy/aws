@@ -28,3 +28,11 @@ resource "aws_vpc" "proj-2" {
     Name = "Project2 VPC"
   }
 }
+
+resource "aws_vpc" "proj-3" {
+  cidr_block = "10.30.0.0/16"
+
+  tags = {
+    Name = "Project3 VPC"
+  }
+}
