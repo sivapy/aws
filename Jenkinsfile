@@ -46,7 +46,7 @@ pipeline {
 
         stage('Apply') {
             steps {
-                bat "pwd;cd terraform/ ; terraform apply -input=false tfplan"
+                sh "pwd;cd terraform/ ; terraform apply -input=false tfplan"
             }
         }
     }
