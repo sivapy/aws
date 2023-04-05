@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "proj-1" {
-  cidr_block = "10.100.0.0/16"
+  cidr_block = "10.10.0.0/16"
 
   tags = {
     Name = "Project1 V P C"
@@ -33,5 +33,12 @@ resource "aws_vpc" "proj-3" {
 
   tags = {
     Name = "Project3 VPC"
+  }
+}
+resource "aws_vpc" "proj-4" {
+  cidr_block = "10.40.0.0/16"
+
+  tags = {
+    Name = "Project4 VPC"
   }
 }
