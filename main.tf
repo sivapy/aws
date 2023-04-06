@@ -36,4 +36,27 @@ resource "aws_subnet" "subnet1" {
     Name = "Main"
   }
 }
+resource "aws_network_interface" "foo" {
+  subnet_id   = aws_subnet.subnet1.id
+  private_ips = ["10.200.1.100"]
+
+  tags = {
+    Name = "primary_network_interface"
+  }
+}
+
+
+resource "aws_instance" "myweb" {
+  ami           = "ami-0011ac562eeee4a55"
+  instance_type = "t2.micro"
+  network_interface {
+    network_interface_id = aws_network_interface.foo.id
+    device_index         = 0
+  }
+
+  tags = {
+    Name = "EC2-web"
+  }
+}
+
 
