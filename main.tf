@@ -47,8 +47,8 @@ resource "aws_network_interface" "foo" {
 
 
 resource "aws_instance" "myweb" {
-  ami           = "ami-0011ac562eeee4a55"
-  #instance_type = "t2.micro"
+  ami           = "ami-0f2e14a2494a72db9"
+  instance_type = "t2.micro"
   network_interface {
     network_interface_id = aws_network_interface.foo.id
     device_index         = 0
