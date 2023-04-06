@@ -13,7 +13,7 @@ provider "aws" {
   region = "ap-south-1"
 }
 
-resource "aws_vpc" "proj--1" {
+resource "aws_vpc" "proj1" {
   cidr_block = "10.100.0.0/16"
 
   tags = {
@@ -26,6 +26,14 @@ resource "aws_vpc" "proj3" {
 
   tags = {
     Name = "Project2 VP C"
+  }
+}
+resource "aws_subnet" "subnet1" {
+  vpc_id     = aws_vpc.proj3.id
+  cidr_block = "10.200.1.0/24"
+
+  tags = {
+    Name = "Main"
   }
 }
 
