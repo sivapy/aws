@@ -25,7 +25,7 @@ resource "aws_vpc" "proj3" {
   cidr_block = "10.200.0.0/16"
 
   tags = {
-    Name = "Project2 VP C"
+    Name = "Project2 VPC"
   }
 }
 resource "aws_subnet" "subnet1" {
@@ -37,18 +37,5 @@ resource "aws_subnet" "subnet1" {
   }
 }
 
-
-resource "aws_instance" "myweb" {
-  ami           = "ami-0f2e14a2494a72db9"
-  instance_type = "t2.micro"
-  network_interface {
-    network_interface_id = aws_network_interface.foo.id
-    device_index         = 0
-  }
-
-  tags = {
-    Name = "EC2-web"
-  }
-}
 
 
