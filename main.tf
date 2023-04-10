@@ -37,5 +37,13 @@ resource "aws_subnet" "subnet1" {
   }
 }
 
+resource "aws_vpc" "proj3" {
+  cidr_block = "10.30.0.0/16"
+
+  tags = {
+    Name = "Project3 V P C"
+  }
+}
+
 
 
