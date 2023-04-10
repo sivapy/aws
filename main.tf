@@ -21,7 +21,7 @@ resource "aws_vpc" "proj1" {
   }
 }
 
-resource "aws_vpc" "proj3" {
+resource "aws_vpc" "proj2" {
   cidr_block = "10.200.0.0/16"
 
   tags = {
