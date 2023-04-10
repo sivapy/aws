@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "proj1" {
-  cidr_block = "10.100.0.0/16"
+  cidr_block = "10.10.0.0/16"
 
   tags = {
     Name = "Project1 VPC"
@@ -22,15 +22,15 @@ resource "aws_vpc" "proj1" {
 }
 
 resource "aws_vpc" "proj2" {
-  cidr_block = "10.200.0.0/16"
+  cidr_block = "10.20.0.0/16"
 
   tags = {
     Name = "Project2 VPC"
   }
 }
 resource "aws_subnet" "subnet1" {
-  vpc_id     = aws_vpc.proj3.id
-  cidr_block = "10.200.1.0/24"
+  vpc_id     = aws_vpc.proj2.id
+  cidr_block = "10.20.1.0/24"
 
   tags = {
     Name = "Main"
