@@ -1,11 +1,41 @@
-provider "aws" {
-    region = "us-east-1"  
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+  required_version = ">= 1.2.0"
 }
 
-resource "aws_instance" "foo" {
-  ami           = "ami-05fa00d4c63e32376" # us-west-2
-  instance_type = "t2.micro"
+provider "aws" {
+  region = "ap-south-1"
+}
+
+resource "aws_vpc" "proj1" {
+  cidr_block = "10.100.0.0/16"
+
   tags = {
-      Name = "TF-Instance"
+    Name = "Project1 VPC"
   }
 }
+
+resource "aws_vpc" "proj2" {
+  cidr_block = "10.200.0.0/16"
+
+  tags = {
+    Name = "Project2 VPC"
+  }
+}
+resource "aws_subnet" "subnet1" {
+  vpc_id     = aws_vpc.proj3.id
+  cidr_block = "10.200.1.0/24"
+
+  tags = {
+    Name = "Main"
+  }
+}
+
+
+
