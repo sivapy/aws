@@ -25,7 +25,7 @@ resource "aws_vpc" "proj2" {
   cidr_block = "10.20.0.0/16"
 
   tags = {
-    Name = "Project2 VP C"
+    Name = "Project2 VPC"
   }
 }
 resource "aws_subnet" "subnet1" {
