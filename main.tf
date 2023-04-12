@@ -17,7 +17,7 @@ resource "aws_vpc" "proj1" {
   cidr_block = "10.10.0.0/16"
 
   tags = {
-    Name = "Project1 VP C"
+    Name = "Project1 VPC"
   }
 }
 
@@ -36,7 +36,9 @@ resource "aws_subnet" "subnet1" {
     Name = "Main"
   }
 }
-
-
-
-
+resource "aws_vpc" "proj3" {
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "Project3 VPC"
+  }
+}
