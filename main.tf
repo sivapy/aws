@@ -11,7 +11,6 @@ terraform {
 
 provider "aws" {
   region = "ap-south-1"
-  profile = "terraform-user"
 }
 
 resource "aws_vpc" "proj1" {
