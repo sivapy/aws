@@ -6,7 +6,7 @@ resource "aws_vpc" "proj1" {
   cidr_block = "10.10.0.0/16"
 
   tags = {
-    Name = "Project1 V P C"
+    Name = "${local.stagging_env}_vpc1"
   }
 }
 
@@ -14,7 +14,7 @@ resource "aws_vpc" "proj2" {
   cidr_block = "10.20.0.0/16"
 
   tags = {
-    Name = "${local.stagging_env}_vpc1"
+    Name = "${local.stagging_env}_vpc2"
   }
 }
 resource "aws_subnet" "subnet1" {
@@ -22,7 +22,7 @@ resource "aws_subnet" "subnet1" {
   cidr_block = "10.20.1.0/24"
 
   tags = {
-    Name = "Main"
+    Name = "${locals.stagging_env}_vpc2_subnet"
   }
 }
 
