@@ -1,23 +1,12 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.16"
-    }
-  }
-
-  required_version = ">= 1.2.0"
-}
-
-provider "aws" {
-  region = "ap-south-1"
+locals {
+  stagging_env = "Staging"
 }
 
 resource "aws_vpc" "proj1" {
   cidr_block = "10.10.0.0/16"
 
   tags = {
-    Name = "Project1 VPC"
+    Name = "Project1 V P C"
   }
 }
 
@@ -25,7 +14,7 @@ resource "aws_vpc" "proj2" {
   cidr_block = "10.20.0.0/16"
 
   tags = {
-    Name = "Project2 VPC"
+    Name = "${local.stagging_env}_vpc1"
   }
 }
 resource "aws_subnet" "subnet1" {
@@ -36,9 +25,7 @@ resource "aws_subnet" "subnet1" {
     Name = "Main"
   }
 }
-resource "aws_vpc" "proj3" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name = "Project3 VPC"
-  }
-}
+
+
+
+
