@@ -22,7 +22,7 @@ resource "aws_subnet" "subnet1" {
   cidr_block = "10.20.1.0/24"
 
   tags = {
-    Name = "${locals.stagging_env}_vpc2_subnet"
+    Name = "${local.stagging_env}_vpc2_subnet"
   }
 }
 
